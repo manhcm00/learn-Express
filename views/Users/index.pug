@@ -5,17 +5,20 @@ block content
 
     a.btn.btn-primary.mb-3(href="/user/create") new
 
-    form.ml-auto(action="/user/search" class="d-flex")
+    form.ml-auto.w-25(action="/user/search" class="d-flex")
         input(type="text" name="q" class="form-control")
         button(class="btn btn-primary") Search
 
     table.table
         tr 
+            th Avatar
             th Name
             th Phone
             th Actions
         each user in users
             tr
+                td
+                    img(src=user.avatar, alt="", width="32")
                 td= user.name
                 td= user.phone
                 td
